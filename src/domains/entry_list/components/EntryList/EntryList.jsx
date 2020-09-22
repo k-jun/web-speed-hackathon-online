@@ -33,7 +33,7 @@ export function EntryList({ blogId, list }) {
                     dateTime={dayjs(entry.published_at).toISOString()}
                     title={dayjs(entry.published_at).toISOString()}
                   >
-                    {dayjs(publishedAt, 'YYYY-MM-DD')}
+                    {dayjs(entry.published_at, 'YYYY-MM-DD')}
                   </time>
                   <p className="entry-list-EntryList__title">{entry.title}</p>
                 </div>
