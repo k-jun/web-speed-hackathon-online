@@ -4,6 +4,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -30,6 +31,11 @@ module.exports = {
       title: 'Amida Blog: あみぶろ',
       template: path.resolve(__dirname, 'src', 'index.html'),
       inject: false,
+    }),
+    new CompressionPlugin({
+      test: /\.(css|js|html)$/,
+      algorithm: 'gzip',
+      compressionOptions: { level: 9 },
     }),
   ],
 
