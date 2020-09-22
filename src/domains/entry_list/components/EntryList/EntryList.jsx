@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment-timezone';
+import dayjs from 'dayjs';
+import timezone from 'dayjs/plugin/timezone';
 
 import { ProportionalImage } from '../../../../foundation/components/ProportionalImage';
+
+dayjs.extend(timezone);
+dayjs.tz.setDefault('Asia/Tokyo');
 
 export function EntryList({ blogId, list }) {
   return (
@@ -26,8 +30,8 @@ export function EntryList({ blogId, list }) {
                 <div className="entry-list-EntryList__text">
                   <time
                     className="entry-list-EntryList__published-at"
-                    dateTime={moment(entry.published_at).toISOString(true)}
-                    title={moment(entry.published_at).toISOString(true)}
+                    dateTime={dayjs(entry.published_at).toISOString()}
+                    title={dayjs(entry.published_at).toISOString()}
                   >
                     {moment(entry.published_at).format('YYYY-MM-DD')}
                   </time>
