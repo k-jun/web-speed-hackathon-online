@@ -13,7 +13,7 @@ import { ProportionalImage } from '../../foundation/components/ProportionalImage
 import AmidaImage from '../../assets/amida.png';
 import Amida2Image from '../../assets/amida2.png';
 
-export function Entrance() {
+export default function Entrance() {
   const dispatch = useDispatch();
   const blogList = useSelector((state) => state.blogList);
   const [pickups, setPickups] = useState([]);
@@ -94,7 +94,7 @@ export function Entrance() {
             />
           </div>
           <div className="Entrance__hero-contents">
-            <img src={AmidaImage} className="Entrance__hero-logo" alt="" />
+            <img src={AmidaImage} className="Entrance__hero-logo" alt="" lazyload/>
             <p className="Entrance__hero-text">
               <span className="Entrance__hero-text-en">Amida Blog:</span>
               <span className="Entrance__hero-text-ja">{heroTextJa}</span>
