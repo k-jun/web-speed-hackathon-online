@@ -2,7 +2,7 @@ import timeout from 'race-timeout';
 import axiosMod from 'axios';
 import AxiosMockAdapter from 'axios-mock-adapter';
 
-const TIMEOUT = 2 * 1000;
+const TIMEOUT = 20 * 1000;
 const API_ENDPOINT = window.location.origin;
 
 const axios = axiosMod.create({
